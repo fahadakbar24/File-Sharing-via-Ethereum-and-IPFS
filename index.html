@@ -5,45 +5,80 @@
     <title>File Sharing via Ethereum and IPFS</title>
     <link rel="stylesheet" type="text/css" href="./resources/style.css" />
     <link rel="stylesheet" type="text/css" href="./resources/libraries/bootstrap/bootstrap.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="./resources/libraries/iconic/css/open-iconic-bootstrap.min.css" />
+
     <script type="text/javascript" src="./resources/libraries/ipfs/ipfs.js"></script>
     <script type="text/javascript" src="./resources/libraries/web3/web3.min.js"></script>
-    <script type="text/javascript" src="./resources/libraries/bootstrap/bootstrap.min.js"></script>
-    
+    <script type="text/javascript" src="./resources/libraries/jquery/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="./resources/libraries/bootstrap/bootstrap.bundle.min.js"></script>
+
     <script type="text/javascript" src="./resources/index.js"></script>
+    <script type="text/javascript" src="./resources/app.js"></script>
 </head>
 
 <body>
-    <div class="margin-top-2 center">
-        <h2>File Sharing via Ethereum and IPFS</h2>
-        <h6>Fork from IPFS + Ethereum Storage Application</h6>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="offset-1 col-7">
+                <div class="row mt-4">
+                    <div class="col-12 text-center">
+                        <h2>File Sharing via Ethereum and IPFS</h2>
+                        <h6>Fork from IPFS + Ethereum Storage Application</h6>
+                    </div>
+                </div>
 
-        <hr />
+                <hr />
+
+                <div class="row">
+                    <div class="col-12 text-center" id="urlFileForm">
+                        <form action="#" id="urlForm">
+                            <input id="url-picker" type="url" />
+                            <input id="url-saver" type="button" value="Add file from URL" class="bg-info mt-2" />
+                        </form>
+
+                        <div class="mt-3 mb-3">OR</div>
+
+                        <form action="#" id="fileForm">
+                            <input id="file-picker" type="file" multiple />
+                            <input id="file-saver" type="button" value="Add file" class="bg-info mt-2" />
+                        </form>
+                    </div>
+
+                    <div id="fileFormLoading" class="hidden text-center">Contract is being deployed: awaiting deployment
+                        ...</div>
+                </div>
+
+                <hr />
+
+                <div class="row">
+                    <div class="col">
+                        <h4 class="text-center">Shared Files</h4>
+                        <table class="table table-sm table-responsive full-width table-striped table-bordered table-hover ">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">View</th>
+                                    <th scope="col">File Name</th>
+                                    <th scope="col">Hash</th>
+                                </tr>
+                            </thead>
+                            <tbody id="fileList" >
+                                <tr class="">
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div id="fileLog">
+                    <h4 class="text-center">Logs</h4>
+                </div>
+            </div>
+        </div>
     </div>
-
-
-    <p>Here is a concrete example. Let's say we want to upload an image of the <a
-            href="https://ethereum.org/images/wallpaper-homestead.jpg">Ethereum Homestead wallpaper</a>. For example
-        purposes, my IPFS hash address for this wallpaper resolves to "QmPJLNMiAp3QoCKdGAgzshNRbQiZ8wQmyjYkcUHJZzQ19u".
-        Then we have all the pieces to run the storage application.</p>
-
-    <p>Run the commands:</p>
-    <ol>
-        <li><code>deployStorage()</code></li>
-        <li><code>storeContent("https://ethereum.org/images/wallpaper-homestead.jpg")</code></li>
-        <li><code>storeAddress("QmPJLNMiAp3QoCKdGAgzshNRbQiZ8wQmyjYkcUHJZzQ19u")</code></li>
-        <li><code>fetchContent()</code></li>
-    </ol>
-
-    <p>This process will then return: "http://localhost:8080/ipfs/QmPJLNMiAp3QoCKdGAgzshNRbQiZ8wQmyjYkcUHJZzQ19u"</p>
-
-    <br />
-    <hr />
-    <br />
-
-    <p>Troubleshooting: To verify there is a positive ether balance, run <code>getBalance()</code> to check the Ethereum
-        wallet balance.</p>
-
-    <br />
-    <hr />
 </body>

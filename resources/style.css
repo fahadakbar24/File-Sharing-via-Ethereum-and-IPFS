@@ -1,4 +1,17 @@
+@font-face {
+   font-family: 'iconic-sm';
+   src: url('./libraries/iconic/fonts/open-iconic.eot');
+}
+
 html * {
    color: #000 !important;
    font-family: Arial !important;
+}
+
+#fileLog {
+   height: 100%;
+   overflow-y: scroll;
+   border-left: 2px dotted gray;
+   padding: 10px 0 0 10px;
+   word-break: break-all;
 }
