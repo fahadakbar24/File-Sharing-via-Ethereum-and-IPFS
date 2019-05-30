@@ -133,7 +133,7 @@ function AddFileToList(fileDetails) {
       <td>${sNo++}</td>
       <td>
         <a href='${ipfsAddress+'/'+fileDetails.Hash}' target='_blank'>
-        <span class="oi oi-eye"></span>
+        <span class="oi oi-eye"></span> - View
         </a>
       </td>
       <td>${fileDetails.Name}</td>
