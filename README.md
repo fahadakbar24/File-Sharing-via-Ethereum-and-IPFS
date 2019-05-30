@@ -1,4 +1,4 @@
-# IPFS + Ethereum Storage
+# File Sharing via Ethereum and IPFS
 
 We will create a simple datastore solution using IPFS and Ethereum. IPFS provides a convenient interface for distributed data storage, with a hash-based content address for reference to our file. This address will be stored in our smart contract on a private Ethereum blockchain. To retrieve the latest data, we will fetch the address from our blockchain and query IPFS for the associated file.
 
